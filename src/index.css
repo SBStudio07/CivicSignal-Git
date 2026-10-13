@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-paper font-sans text-ink antialiased; }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-signal; outline-style: solid; }
+}
+
+@layer components {
+  .panel { @apply rounded-xl border border-paper-line bg-paper-card shadow-panel; }
+  .field-label { @apply mb-1.5 block text-sm font-semibold text-ink; }
+  .field-input { @apply w-full rounded-lg border border-paper-line bg-white px-3 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-signal focus:outline-none focus:ring-2 focus:ring-signal/25; }
+}
+
+.cs-pin {
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  border: 3px solid #fff; color: #fff; font: 600 13px/1 "Public Sans", sans-serif;
+  box-shadow: 0 2px 8px rgba(15, 27, 45, 0.35);
+}
+.cs-pin.is-selected { transform: scale(1.25); box-shadow: 0 0 0 4px rgba(31, 79, 224, 0.35), 0 2px 8px rgba(15, 27, 45, 0.35); }
+.cs-pin.is-resolved { opacity: 0.55; }
+.leaflet-container { font-family: "Public Sans", sans-serif; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
