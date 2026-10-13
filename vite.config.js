@@ -7,7 +7,7 @@ const isGithubPages =
   process.env.DEPLOY_TARGET === 'github-pages';
 
 export default defineConfig({
-  base: isGithubPages ? '/CivicSignal/' : '/',
+  base: isGithubPages ? '/CivicSignal-Git/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
